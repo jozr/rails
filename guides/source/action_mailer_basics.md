@@ -232,10 +232,10 @@ If you want to send emails right away (from a cronjob for example) just call
 [`deliver_now`][]:
 
 ```ruby
-class SendWeeklySummary
+class SendWelcomeEmail
   def run
     User.find_each do |user|
-      UserMailer.with(user: user).weekly_summary.deliver_now
+      UserMailer.with(user: user).welcome_email.deliver_now
     end
   end
 end
